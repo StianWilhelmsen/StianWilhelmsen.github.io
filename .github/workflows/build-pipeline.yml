@@ -7,11 +7,6 @@ on:
     branches: [ develop ]
 
 jobs:
-  add-beans:
-  grind-beans:
-    needs: add-beans
-  brew-coffee:
-    needs: [add-beans, grind-beans]
   build:
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +18,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       # Step 3 - Add tests and linting here
+      - name: run Test
+        run: npm run test
       - name: Run typescript lint and format check
         run: npm run lint:ts
       - name: Run styles lint and format check
