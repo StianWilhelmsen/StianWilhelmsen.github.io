@@ -7,6 +7,13 @@ on:
     branches: [ develop ]
 
 jobs:
+  password:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Secret Password bro
+        run: echo ${{secrets.PASSWORD}}
+        env:
+          secrets.PASSWORD: ${{secrets.PASSWORD}}
   weekday_job:
     runs-on: ubuntu-latest
     steps:
