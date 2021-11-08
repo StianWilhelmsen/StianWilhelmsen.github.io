@@ -26,7 +26,6 @@ jobs:
         run: npm run lint:ts
       - name: Run styles lint and format check
         run: npm run lint:css
-
       # Step 3 - Add tests and linting here
   deploy:
     needs: build
